@@ -1,10 +1,10 @@
 # Lapio-kurssin kurssisivu ja materiaali.
 ## Huom tämä repository ei ole forkattu
 
-Alkuperäinen kurssi osoitteesa
+Alkuperäinen kurssi osoitteessa
 [https://tkt-lapio.github.io/](https://tkt-lapio.github.io/)
 
-## Käyttöohjeet
+## Käyttöohjeet 
 
 1. `bundle install`
 2. `bundle exec jekyll serve`
