@@ -1,5 +1,7 @@
 # Lapio-kurssin kurssisivu ja materiaali.
+## Huom tämä repository ei ole forkattu
 
+Alkuperäinen kurssi osoitteesa
 [https://tkt-lapio.github.io/](https://tkt-lapio.github.io/)
 
 ## Käyttöohjeet
