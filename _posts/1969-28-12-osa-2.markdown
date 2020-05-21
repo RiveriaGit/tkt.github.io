@@ -230,7 +230,7 @@ commit 51bf544c786a671c28f70713b6cb33d87cc38
 Author:Etunimi Sukunimi
 Date:18.5.2020
 
-    Lisätty eka_tiedosto.txt -tiedosto
+    Lisätty eka_tiedosto.txt
 ```
 
 Komento `git log` siis tulostaa commitin tekijän, luontiajan, sekä commitille annetun otsikon. Jokaisella commitilla on sen identifioiva merkkijono eli id, joka on [SHA-1](https://en.wikipedia.org/wiki/SHA-1)-muodossa. Komennon `git log` tulostuksessa id näkyy pitkänä merkkijonona, esimerkiksi tässä tapauksessa se on `51bf544c786a671c28f70713b6cb33d87cc38`. SHA-1 merkkijono yksilöi Git-tietokannassa olevat objektit.
@@ -241,7 +241,7 @@ Commitin luominen voi aluksi tuntua epäintuitiiviselta. Seuraava ajatusleikki s
 
 ### Haarat
 
-Komennon `git status` tulosteen yläreunassa näkyy: `On branch master`. Haarat, eli englanniksi _branchit_, mahdollistavat committien erottamisen toisistaan. Näin ollen on mahdollista kehittää uuden haaran sisältöä ilman, että menetetään toimiva versio ohjelmasta. Tavanomaisesti jokaisella projektilla on päähaara, joka on yleensä nimeltään`master`, ja jossa pidetään senhetkistä toimivaa ja käytössä olevaa versiota tiedosta.
+Komennon `git status` tulosteen yläreunassa näkyy: `On branch master`. Haarat, eli englanniksi _branchit_, mahdollistavat committien erottamisen toisistaan. Näin ollen on mahdollista kehittää uuden haaran sisältöä ilman, että menetetään toimiva versio ohjelmasta. Tavanomaisesti jokaisella projektilla on päähaara, joka on yleensä nimeltään`master`, ja jossa pidetään sen hetkistä toimivaa ja käytössä olevaa versiota tiedosta.
 
 Usein haaroja käytetään niin, että päähaarasta erotetaan uuden toiminnallisuuden kehittämiseksi toinen haara, jossa lisäominaisuuksia kehitetään. Haarat eivät vaikuta toistensa tiloihin, eli uutta toiminnallisuutta voidaan kehittää huolimatta päähaarasta. Haaroissa olevat commitit ketjuttuvat haaran omalla aikajanalle ja eivät vaikuta toisiinsa. Kun ollaan todettu uusi ominaisuus toimivaksi, voidaan se yhdistää päähaaraan, ja poistaa uusi haara. Tässä osassa ei käsitellä haaroja sen enempää: riittää ymmärtää, että käytämme nyt vain master-, eli päähaaraa.
 
@@ -254,10 +254,9 @@ Usein haaroja käytetään niin, että päähaarasta erotetaan uuden toiminnalli
 <li>Lisää sen jälkeen vielä alikansio nimeltä<code>softat</code>.Luo softat alikansioon uusi ohjelmat.txt niminen tiedosto ja lisää tiedostoon sisällöksi tietokoneeseesi asennetut ohjelmat komennolla <code>wmic product get name >> softat/ohjelmat.txt</code>. Tulet tarvitsemaan näitä tiedostoja tulevissa tehtävissä. HUOM Komennon suorittaminen saattaa kestää jonkin aikaa</li>
 <li>Kun olet tehnyt kaikki edellä mainitut muutokset, tee yhteensä kolme committia: yksi, jossa lisäät tiedoston tietokoneen_nimi.txt, toinen, jossa lisäät tiedoston verkkoasetukset.txt, ja kolmas, jossa lisäät softat kansion sisältöineen. Kirjoita commiteille kuvaavat otsikot.</li>
 <li>Tarkista komennolla <code>git log</code>, että olet luonut kolme committia.</li>
-<li>Lisää tietokoneen_nimi.txt tiedostoon vielä päivämäärä komennolla <code>date >> tietokoneen_nimi.txt</code>, ja tee vielä yksi commit. Käytä muutoksen lisäämisessä komentoa <code>git add -p</code>.</li>
+<li>Lisää tietokoneen_nimi.txt tiedoston viimeiselle riville vielä päivämäärä komennolla <code>date >> tietokoneen_nimi.txt</code>, ja tee vielä yksi commit. Käytä muutoksen lisäämisessä seuraavaan committiin komentoa <code>git add -p</code>.</li>
 <li>Tarkista, että kaikki commitit näkyvät <code>git log</code>-komennolla.</li>
 </ol>
-
 
 <div class="note">
 Jos committia luodessa tulostuu virheviesti <code>error: cannot run : No such file or directory error: unable to start editor</code>, varmista, että olet konfiguroinut oletuseditorin oikein (tämä tehtiin tehtävässä 2).
@@ -268,29 +267,29 @@ Jos committia luodessa tulostuu virheviesti <code>error: cannot run : No such fi
 <h3>Tehtävä 4: Muutosten poistaminen {% include points.html text="10%" %}</h3>
 <ol>
 <li>Selvitä, miten saat poistettua muutoksen tilasta, jossa olet lisäämässä sitä committiin (näkyy vihreänä tulostuksessa), ja siirrettyä muutoksen otsikon <code>Changes not staged for commit</code> alle? Vinkki: <code>git status</code> auttaa.</li>
-<li>Lisää uusia tuotteita ostoslistaan, ja aseta muutokset lisättäväksi seuraavaan committiin (<code>Changes to be commited</code>). <strong>Älä kuitenkaan paketoi committia.</strong></li>
+<li>Lisää tiedoston tietokoneen_nimi.txt viimeiselle riville nykyinen kellonaika , ja aseta muutokset lisättäväksi seuraavaan committiin (<code>Changes to be commited</code>). <strong>Älä kuitenkaan paketoi committia.</strong></li>
 <li>Poista sen jälkeen muutokset seuraavasta commitista.</li>
-<li>Poista sen jälkeen muutokset Gitin avulla niin, että kun avaat ostoslistan, uusimmat tuotteet puuttuvat.</li>
+<li>Poista sen jälkeen kellonaika myös varsinaisesta tiedostosta Gitin tarvittavaa komentoa käyttäen niin, että kun avaat tietokoneen_nimi.txt tiedoston, kellonaika on poistettu.</li>
 </ol>
 </div>
 
 ## Koodin jakaminen GitHubissa
 
-Käsitellään seuraavaksi, miten GitHubia voidaan käyttää yhdessä Gitin kanssa koodin jakamiseksi ja julkaisemiseksi.
+Käsitellään seuraavaksi, miten GitHubia voidaan käyttää yhdessä Gitin kanssa tiedon jakamiseksi ja julkaisemiseksi.
 
-### Etärepositorion luominen
+### Etärepositorion luominen GitHubiin
 
-Jotta projektin voi jakaa GitHubin kautta, sille pitää luoda oma repositorio (kavereille repo) GitHubiin, ja tämä repositorio pitää liittää oman koneen Git-projektiin. Tämä tapahtuu lisäämällä repo Git-projektin etärepositorioksi, eli _remoteksi_. Kun Git-projektille lisätään etärepositorio, on mahdollistä siirtää tietoa sen ja omalla koneella olevan projektin välillä. Tällöin projektista on olemassa kaksi versiota: paikallinen (_local_), eli "omalla koneella" oleva projekti ja etärepositorion versio (_remote_), eli GitHubissa säilöttävä versio.
+Jotta projektin voi jakaa GitHubin kautta, sille pitää luoda oma repositorio (kavereille repo) GitHubiin. Tämän lisäksi GitHub repositorio täytyy kytkeä omalla koneella olevaan Git-projektin. Tämä tapahtuu lisäämällä GitHubissa  sijaitseva repositorio Git-projektin etärepositorioksi, eli _remoteksi_. Kun Git-projektille lisätään etärepositorio, on mahdollistä siirtää tietoa sen ja omalla koneella olevan projektin välillä. Tällöin projektista on olemassa kaksi versiota: paikallinen (_local_), eli "omalla koneella" oleva projekti ja etärepositorion versio (_remote_), eli GitHubissa säilöttävä versio.
 
-Tässä siis näkyy, miten GitHubia voidaan käyttää varmuuskopiona: kun projektin tila päivitetään GitHubiin, pääsee tietoon käsiksi internetin kautta, ja projektia voi jatkaa, vaikka paikalliselle versiolle tapahtuisikin jotain.
+GitHubia voidaan siis käyttää varmuuskopiona: kun projektin tila päivitetään GitHubiin, pääsee tietoon käsiksi internetin kautta, ja projektia voidaan jatkaa, vaikka paikalliselle versiolle tapahtuisikin jotain. GitHub repositorion käyttö voidaan sallia myös muille henkilöille. Tämä mahdollistaa projekti kehittämisen työryhmänä. Projektissa toimivat henkilöt voivat kloonata Githubiin tallennetun projektin omiin paikallisiin Git projektikansioihinsa ja aika-ajoin päivittää Githubissa olevaa olevaa repositoriota.
 
-GitHubissa saa luotua repositorion oikeasta yläkulmasta:
+GitHubissa saa luotua repositorion oikean yläkulman pudotusvalikosta:
 
 ![Uuden repon luominen](/assets/new-repo.png)
 
-Avautuu näkymä, jossa lisätään repolle nimi ja kuvaus. Repositorio voi olla joko julkinen tai yksityinen. Julkisen repostorion näkee kuka vaan, yksityisen vain omistajan valitsemat käyttäjät.
+Esiin avautuu näkymä, jossa lisätään repositoriolle nimi ja kuvaus. Repositorio voi olla joko julkinen tai yksityinen. Julkisen repostorion voi nähdä kuka vain, yksityisen vain omistaja tai hänen valitsemansa käyttäjät.
 
-GitHub myös tarjoaa mahdollisuuden luoda projektille _README:n_, _lisenssin_ ja _.gitignore_-tiedoston. Ohjelmistotuotannossa on tapana, että ohjelmistoprojektiin lisätään README-niminen tiedosto, joka sisältää yleishyödyllistä tietoa koko projektista. Hyvä README sisältää esimerkiksi lyhyen kuvauksen projektista, asennusohjeet ja linkin mahdolliseen dokumentaatioon. Lisenssi tarkoittaa dokumenttia, jossa määritellään, mitkä ovat ohjelman tekijän ja käyttäjän vastuut ja vapaudet. Tiedosto `.gitignore` on erittäin hyödyllinen tiedosto, jonka avulla Gittiä voi pyytää jättämään joitain tiedostoja huomiotta committeja tehdessä. `.gitignore`:n käytöstä voit lukea esimerkiksi [täältä](https://www.atlassian.com/git/tutorials/saving-changes/gitignore).
+GitHub myös tarjoaa mahdollisuuden luoda projektille _README:n_, _lisenssi_ ja _.gitignore_-tiedoston. Ohjelmistotuotannossa on tapana, että ohjelmistoprojektiin lisätään README-niminen tiedosto, joka sisältää yleishyödyllistä tietoa projektista. Hyvä README sisältää esimerkiksi lyhyen kuvauksen projektista, käyttöohjeet sekä  linkin mahdolliseen dokumentaatioon. README tiedosto on tiedostotyypiltään ns. markdown dokumentti. Markdown mahdollistaa tiedoston monipuolisen [muotoilun](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) joko markdownin omalla muotoilukielellä tai käyttäen HTML-tagejä. Lisenssi tarkoittaa dokumenttia, jossa määritellään, mitkä ovat ohjelman tekijän ja käyttäjän vastuut ja vapaudet. Tiedosto `.gitignore` on tiedosto, jonka avulla Gittiä voidaan pyytää jättämään joitain tiedostoja huomiotta committeja tehdessä. `.gitignore`:n käytöstä voit lukea esimerkiksi [täältä](https://www.atlassian.com/git/tutorials/saving-changes/gitignore).
 
 <div class="note">
 Kun halutaan siirtää valmiiksi luotu projektikansio GitHubiin, ei kannata antaa GitHubin luoda tiedostoja automaattisesti. Tämä johtaisi vaikeuksiin, sillä tällöin GitHubissa olisi tiedosto, jota lokaalissa versiossa ei ole. Tällaisen tilanteen ongelmallisuus selviää myöhemmin tässä osassa.
@@ -298,13 +297,13 @@ Kun halutaan siirtää valmiiksi luotu projektikansio GitHubiin, ei kannata anta
 
 Nappi `Create repository` lisää projektin omaan profiiliin. Kun projektiin navigoi, tarjoaa GitHub hyödyllisiä ohjeita koodin sinne lisäämiseksi. Projektiin löytää käyttäjän profiilista, tai suoraan osoitteella `https://www.github.com/kayttajanimi/projektinnimi`.
 
-### Etärepositorion lisääminen
+### GitHub etärepositorion liittäminen paikalliseen Git projektikansioon
 
 Etärepositorio yhdistetään paikalliseen projektiin komennolla `git remote add`.
 
-Komento ottaa argumentikseen lisättävän etärepositorion nimen sekä osoitteen. GitHub tarjoaa kaksi vaihtoehtoa etärepositorion lisäysprotokollaksi: SSH ja https. Ensimmäisen vaihtoehdon pitäisi olla tuttu ensimmäisestä osasta, toisen selaimen osoitekentästä. SSH on siis sama yhteystyyppi, jolla vierailtiin laitoksen koneilla komennolla `ssh`. Tätä yhteystyyppia on mahdollista käyttää myös GitHubissa, jos koneella on luotu yksityinen ja julkinen avainpari, joista julkinen on lisätty GitHubiin. 
+Komento ottaa argumentikseen lisättävän etärepositorion nimen sekä osoitteen. GitHub tarjoaa kaksi eri vaihtoehtoa etärepositorion lisäysprotokollaksi: SSH ja https. Ensimmäisen vaihtoehdon pitäisi olla tuttu ensimmäisestä osasta. SSH on siis yhteystyyppi, joka mahdollistaa SSH-avainpariin perustuvan salatun yhteyden muodostaminen paikallisen tietokoneen ja GitHubin välillä.. Tätä yhteystyyppia on mahdollista käyttää myös GitHubissa, jos koneella on luotu yksityinen ja julkinen avainpari, ja [julkinen avain](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) on lisätty GitHubiin. 
 
-Jos käyttää https-yhteyttä, autentikointi tapahtuu GitHub-käyttäjänimellä ja salasanalla. SSH-yhteyden käyttö on siis paljon vaivattomampaa, sillä jos yksityisen avaimen lisää ssh-agentille, ei salasanaa tarvitse kirjoittaa jatkuvasti. SSH-avaimia käsiteltiin [ensimmäisessä osassa](/komentorivi#SSH-avainpari).
+Jos käyttää https-yhteyttä, autentikointi tapahtuu GitHub-käyttäjänimellä ja salasanalla. SSH-yhteyden käyttö on siis paljon vaivattomampaa, varsinkin jos yksityisen avaimen lisää ssh-agentille.Tällöin salasanaa tarvitse syöttää jatkuvasti. SSH-avaimia käsiteltiin [ensimmäisessä osassa](/komentorivi#SSH-avainpari).
 
 Valitaan GitHubin ohjeista SSH-osoite projektille, jotta siihen voidaan muodostaa SSH-yhteys:
 
