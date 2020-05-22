@@ -303,37 +303,37 @@ Etärepositorio yhdistetään paikalliseen projektikansioon komennolla `git remo
 
 Komennon argumentina käytetään etärepositorion nimeä ja osoitetta. GitHub tarjoaa kaksi eri vaihtoehtoa etärepositorion lisäysprotokollaksi: SSH ja https. SSH on yhteystyyppi, joka mahdollistaa SSH-avainpariin perustuvan salatun yhteyden paikallisen tietokoneen ja GitHubin välillä. Tätä yhteystyyppiä on mahdollista käyttää myös GitHubin yhteydessä, jos koneella vain on käytettävissä yksityinen ja julkinen avainpari, ja [julkinen avain](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ja julkinen avain  lisätty GitHubiin. 
 
-Jos taas halutaan käyttää https-yhteyttä, autentikointi tapahtuu GitHub-käyttäjänimellä ja salasanalla. SSH-yhteyden käyttö on  vaivattomampaa, varsinkin jos yksityisen avaimen lisää ssh-agentille. Tällöin salasanaa ei tarvitse syöttää, koska autentikointa tapahtuu yksityistä avainta käyttäen. SSH-avaimia käsiteltiin [ensimmäisessä osassa](/komentorivi#SSH-avainpari).
+Jos taas halutaan käyttää https-yhteyttä, autentikointi tapahtuu GitHub-käyttäjänimellä ja salasanalla. SSH-yhteyden käyttö on  vaivattomampaa, varsinkin jos yksityisen avaimen lisää ssh-agentille. Tällöin salasanaa ei tarvitse syöttää, koska käyttäjän autentikointi tapahtuu yksityistä avainta käyttäen. SSH-avaimia käsiteltiin [ensimmäisessä osassa](/komentorivi#SSH-avainpari).
 
-Yhteyden muodostamiseksi voidaan itseasiassa käyttää vielä kolmattakin vaihtoehtoa eli GitHub Desktop ohjelmaa. Tällöin yhteys muodostetaan tietokoneeseen asennetun GitHub Desktop ohjelman avustuksella. GitHub Desktop tarjoaa graafisen käyttöliittymän osaan Gitin komennoista. GitHub Desktop voidaan asentaa Windows ja MacOS käyttöjärjestelmiin.
+Yhteyden muodostamiseksi voidaan itseasiassa käyttää vielä kolmattakin vaihtoehtoa eli GitHub Desktop ohjelmaa. Tällöin yhteys muodostetaan tietokoneeseen asennetun GitHub Desktop ohjelman välityksellä. GitHub Desktop tarjoaa graafisen käyttöliittymän osaan Gitin komennoista. GitHub Desktop voidaan asentaa Windows ja MacOS käyttöjärjestelmiin.
 
 Alla näkyvässä kuvassa yhteystyypiksi on valittu SSH-yhteys:
 
 ![SSH osoite GitHubissa](/assets/ssh-clone.png)
 
-Uusi origin-niminen etärepositorio lisätään SSH-yhteyttä käyttäen ajamalla projektikansiossa komento `git remote add origin git@github.com:kayttaja/projekti.git`. Https-osoitetta käytettäessä osoite on lähes sama, kuin selaimen osoiterivillä. Etärepositorion nimeksi voidaan asettaa muutakin kuin "origin", mutta se on yleinen valinta etärepositorin nimeksi. Yhdelle projektille voi lisätä useita etärepositorioita, jolloin niiden järkevä nimeäminen on oleellista.
+Uusi GitHub repositorio lisätään SSH-yhteyttä käyttäen origin nimiseksi etärepositorioksi suorittamalla paikallisen tietokoneen projektikansiossa komento `git remote add origin git@github.com:kayttaja/projekti.git`. Https-osoitetta käytettäessä osoite on lähes sama, kuin GitHub repositorioon viittaava url-osoite selaimen osoiterivillä. Huomaa että etärepositorion nimeksi voidaan asettaa muutakin kuin "origin", mutta se on yleinen valinta etärepositorin nimeksi. Yhdelle projektille voidaan lisätä useita etärepositorioita, jolloin niiden järkevä nimeäminen on tärkeää.
 
 <div class="exercise">
-<h3>Tehtävä 5: SSH-avain GitHubiin {% include points.html text="5%" %}</h3>
+<h3>Tehtävä 5: Julkisen SSH-avaimen ottaminen käyttöön GitHubissa {% include points.html text="5%" %}</h3>
 <p>
-Jos et ole luonut koneellesi ssh-avainparia, tee se ensin. Ohjeet löytyy <a href="/komentorivi#SSH-avainpari">ensimmäisestä osasta</a>.
+Jos et ole luonut koneellesi ssh-avainparia, tee se ensin. Ohjeet ssh-avainparin luomiseksi löytyvät <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">täältä</a>.
 </p>
 <p>
-Lisää julkinen ssh-avaimesi GitHubin käyttäjällesi. <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account">Sille löytyy ohjeet GitHubissa</a>.
+Lisää julkinen ssh-avaimesi GitHubin käyttäjällesi. <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account"> GitHub ohjeet  avaimen lisäämiseksi</a>.
 </p>
 <p class="note">
-Voit tulostaa ssh-avaimen terminaaliisi komennolla <code>cat</code>, kopioida sen  käsin, ja jatkaa GitHubin ohjeiden seuraamista kohdasta 2. Tällöin sinun ei tarvitse asentaa uutta ohjelmaa, kuten GitHubin ohjeet ehdottavat.
+Git Bash konsolissa voit tulostaa julkisen (.pub) ssh-avaimen sisällön suoraan leikepöydälle komennolla <code>cat id_rsa.pub | clip</code> ja jatkaa GitHubin ohjeiden seuraamista kohdasta 2.
 </p>
 </div>
 
 <div class="exercise">
-<h3>Tehtävä 6: Etärepositorion luominen Githubissa {% include points.html text="5%" %}</h3>
-<p>Luo aikaisemmin tekemällesi projektille vastapari, eli repositorio GitHubiin. </p>
+<h3>Tehtävä 6: Etärepositorion luominen Githubiin {% include points.html text="5%" %}</h3>
+<p>Luo aikaisemmin tekemällesi paikallisella tietokoneella olevalle projektillekansiolle vastapari, eli repositorio GitHubiin. </p>
 
-<p><b>Älä luo projektille GitHubissa valmiiksi lisenssiä, READMEtä tai .gitignore-tiedostoa, muuten kohtaat myöhemmin ongelmia.</b></p>
+<p><b>Älä kuitenkaan luo projektille GitHubissa valmiiksi lisenssiä, READMEtä tai .gitignore-tiedostoa, muuten kohtaat myöhemmin ongelmia.</b></p>
 
 <p>
-Liitä GitHubin repo projektisi etärepositorioksi. Jos teit edellisen tehtävän, käytä SSH-osoitetta, muuten käytä https-osoitetta.</p>
+Liitä GitHubin repo projektisi etärepositorioksi. Jos teit edellisen tehtävän ja liitit julkisen SSH-avaimen GitHub tunnukseesi, käytä SSH-osoitetta, muuten käytä https-osoitetta.</p>
 </div>
 
 ### Julkaiseminen
