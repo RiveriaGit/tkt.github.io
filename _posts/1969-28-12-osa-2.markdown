@@ -636,10 +636,12 @@ On kuitenkin myös toinen tapa ehdottaa muutoksia olemassaolevaan projektiin: _f
 Jos omaan forkattuun kopioosi tekemäsi muutokset ovat mielestäsi niin hyviä, että haluat ehdottaa niitä myös alkuperäiseen projektiin, sen voi tehdä [pull requestin](https://help.github.com/articles/about-pull-requests/) avulla. Tällöin alkuperäisen projektin omistaja voi niin halutessaan liittää ehdottamasi muutokset mergen avulla alkuperäiseen projektiinsa.
 
 <div class="exercise">
-<h3>Tehtävä 13: Kloonaaminen {% include points.html text="10%" %}</h3>
+<h3>Tehtävä 13: Forkkaaminen ja kloonaaminen {% include points.html text="10%" %}</h3>
 <ol>
 <li>Selvitä ensin Googlen avulla, miten saat selville komentoriviltä Git-projektin etärepositorioiden nimet ja osoitteet. Kyseessä on siis komento, joka ajetaan Git-projektin sisällä, kun sille on asetettu etärepositorio.</li>
-<li>Etsi vapaavalintainen <a href="https://en.wikipedia.org/wiki/Open-source_software">vapaan lähdekoodin</a>-projekti GitHubista (esim. <a href="https://github.com/orfjackal/varjocafe">VarjoCafe</a> tai jokin <a href="https://github.com/TKOaly">TKO-älyn projekti</a>). Kloonaa se ensin koneellesi. Selvitä sitten, minkä nimiseksi etärepositorio asetetaan automaattisesti kloonatessa. Voit tehdä tämän ajamalla edellisessä kohdassa selvittämäsi komennon kloonatun projektin sisällä.</li>
+<li>Forkkaa omaan GitHub profiiliisi harjoitusta varten tehty repositorio osoitteesta  <a href="https://github.com/RiveriaGit/DemoRepo">https://github.com/RiveriaGit/DemoRepo</a>. Kloonaa forkattu etärepositorio koneellesi. Selvitä sitten, minkä nimiseksi etärepositorio asetetaan automaattisesti kloonatessa. Voit tehdä tämän ajamalla edellisessä kohdassa selvittämäsi komennon kloonatun projektin sisällä.</li>
+<li>Lisää nimesi ja päivämäärä annettujen ohjeiden mukaan paikallisesta projektikansiosta käsin ja työnnä muutokset omaan GitHub profiilissa olevaan kopioosi.</li>
+<li>Tee muutoksestasi <i>Pull Request</i> alkuperäiseen repositorioon</li>
 </ol>
 </div>
 
