@@ -192,7 +192,7 @@ Kun ollaan valittu, mitä muutoksia halutaan lisätä seuraavaan committiin, pak
 
 [Täältä](https://github.com/erlang/otp/wiki/writing-good-commit-messages) löytyy nopeat ohjeet hyvän commit-viestin kirjoittamiseksi.
 
-Jatketaan edellistä esimerkkiä. Lisätään seuraavaan committiin myös tieto siitä että tiedostoon`eka_tiedosto.txt`lisätty tekstiä. Annetaa uudelleen komento `git add eka_tiedosto.txt`jolloin myös tiedostoon tehty muutos lisätään staging arealle. Tiedoston `toka_tiedosto.txt` luominen jää edelleen commitin ulkopuolelle. Ennen komennon `git commit` suorittamista, komennon `git status` tulostus on seuraava:
+Jatketaan edellistä esimerkkiä. Lisätään seuraavaan committiin myös tieto siitä että tiedostoon`eka_tiedosto.txt`lisätty tekstiä. Annetaan uudelleen komento `git add eka_tiedosto.txt`jolloin myös tiedostoon tehty muutos lisätään staging arealle. Tiedoston `toka_tiedosto.txt` luominen jää edelleen commitin ulkopuolelle. Ennen komennon `git commit` suorittamista, komennon `git status` tulostus on seuraava:
 
 ```bash
 On branch master
@@ -333,46 +333,47 @@ Git Bash konsolissa voit tulostaa julkisen (.pub) ssh-avaimen sisällön suoraan
 <p><b>Älä kuitenkaan luo projektille GitHubissa valmiiksi lisenssiä, READMEtä tai .gitignore-tiedostoa, muuten kohtaat myöhemmin ongelmia.</b></p>
 
 <p>
-Liitä GitHubin repo projektisi etärepositorioksi. Jos teit edellisen tehtävän ja liitit julkisen SSH-avaimen GitHub tunnukseesi, käytä SSH-osoitetta, muuten käytä https-osoitetta.</p>
+Liitä GitHubin repositorio paikallisen projektisi etärepositorioksi. Jos teit edellisen tehtävän ja liitit julkisen SSH-avaimen GitHub tunnukseesi, käytä SSH-osoitetta, muussa tapauksessa käytä https-osoitetta. Selvitä myös millä Git- komennolla voit tarkasta että GitHub etärepositorio on liitetty onnistuneesti.</p>
+
 </div>
 
 ### Julkaiseminen
 
-Kun projekti on liitetty johonkin GitHubin repositorioon, voidaan committeja julkaista _puskemalla_.
-Muutokset voi puskea tietyn etärepositorion tiettyyn haaraan seuraavasti: `git push remotennimi haarannimi`. Tässä osassa käytämme vain master-haaraa. Jos lisäät sanan `push` jälkeen vivun `-u`, riittää ensi kerralla ajaa `git push`, jolloin muutokset pusketaan automaattisesti samaan paikkaan. Tämän vivun käyttö on suositeltavaa.
+Kun projekti on liitetty GitHubin repositorioon, voidaan committeja julkaista _puskemalla_ ne GitHubiin.
+Muutokset pusketaan etärepositorion tiettyyn haaraan seuraavasti: `git push remotennimi haarannimi`. Tässä osassa käytämme vain master-haaraa. Jos lisäät sanan `push` jälkeen vivun `-u`, riittää ensi kerralla ajaa `git push`, jolloin muutokset pusketaan automaattisesti samaan paikkaan. Tämän vivun käyttö on suositeltavaa.
 
-Pusketaan `lapio_vko2.txt`-tiedostoon tekemämme muutokset komennolla `git push -u origin master`, sillä lisäsimme etärepositorion nimellä `origin`, ja käytämme `master`-haaraa. Navigoidaan GitHubissa projektisivulle. Tiedosto `lapio_vko2.txt` näkyy nyt GitHubissa.
+Pusketaan tiedostot `eka_tiedosto.txt`ja `toka_tiedosto.txt`-tiedostoihin tehdyt muutokset GitHubiin komennolla `git push -u origin master`, sillä GitHub etärepositorio on liitetty nimellä `origin`, ja käytämme `master`-haaraa. Kun GitHub sivun selainnäkymä päivitetetään, tiedostot `eka_tiedosto.txt` ja `toka_tiedosto.txt`näkyvät nyt GitHubissa.
 
 <div class="exercise">
 <h3>Tehtävä 7: Commitin julkaiseminen {% include points.html text="5%" %}</h3>
 <ol>
-<li>Puske tekemäsi kolme committia etärepositoriosi <code>master</code>-haaraan.</li>
+<li>Puske aiemmin tekemäsi kolme committia etärepositoriosi <code>master</code>-haaraan.</li>
 <li>Käy tarkistamassa GitHubissa, että kyseiset commitit näkyvät etärepositoriossa.</li>
 </ol>
 </div>
 
 ### Koodin hakeminen GitHubista
 
-Samasta projektista on nyt siis olemassa kaksi tilaa kahdessa paikassa: paikallinen ja etärepositorio. Katsotaan seuraavaksi, mitä käy, kun nämä kaksi tilaa eivät ole aina täysin samat.
+Projektin sisältämät tiedot on nyt tallennettu kahteen eri paikkaan: tietokoneen paikalliseen projektikansioon sekä GitHub etärepositorioon. Optimitilanteessa nämä kahden eri säilytyspaikan tiedot ovat identtiset. Näin ei kuitenkaan välttämättä ole tilanne, varsinkaan jos GitHub etärepositorion sisältämiä tietoja käytetään useamman kuin  yhden henkilön toimesta. Katsotaan seuraavaksi, mitä käy, kun nämä kaksi tilaa eivät ole aina täysin samat.
 
-Aloitetaan tekemällä muutoksia projektiin GitHubin kautta. GitHubissa pääsee muokkaamaan tiedostoja painamalla niiden nimeä, ja oikealla olevaa kynä-ikonia.
+Aloitetaan tekemällä muutoksia projektiin GitHubin kautta. GitHubin etärepositoriossa olevia tiedostoja voi muokata, klikkaamalla ensin niiden nimeä ja tämän jälkeen näytön oikessa laidassa näkyvää kynä-ikonia.
 
 ![Kynä-ikoni Githubissa](/assets/edit.png)
 
-Lisätään tiedostoon `lapio_vko2.txt` uusi rivi tekstiä, ja luodaan commit sivun alalaidasta vihreästä napista. Muutokset eivät kuitenkaan näy omalla koneella heti.
+Lisätään tiedostoon `tietokoneen_nimi.txt` uusi rivi tekstiä, ja luodaan uusi commit sivun alalaidasta vihreästä napista. Muutokset eivät kuitenkaan näy omalla koneella heti. Etärepositoriossa tehdyt muutokset eivät siis siirry automaattisesti paikalliseen projektikansioon.
 
-Ajetaan seuraavat komennot:
+Suoritetaan paikallisen tietokoneen Git Bash konsolissa seuraavat komennot:
 
 ```bash
 git fetch
 git status
 ```
 
-`git fetch` hakee projektin uusimman tilan GitHubista, mutta ei tee muutoksia paikalliseen työhön. **Jos `git status` ei jatkossa näytä ajankohtaista tietoa etärepositorion tilasta, aja ensin `git fetch`**.
+`git fetch` hakee projektin tilan GitHubista, mutta ei tee muutoksia paikalliseen projektikansioon. **Jos `git status` ei jatkossa näytä ajankohtaista tietoa etärepositorion tilasta, aja ensin `git fetch`**.
 
-Muutokset eivät vieläkään näy. Jos puskit committisi etärepositorioon vivun `-u` kanssa, Git osaa kertoa, että GitHubissa on muutoksia, joita paikallisessa versiossa ei ole: status-komento tulostaa yläreunaan `Your branch is behind 'origin/master'`.
+Jos puskit committisi etärepositorioon vivun `-u` kanssa, Git osaa kertoa, että GitHubissa on muutoksia, joita paikallisessa versiossa ei ole: status-komento tulostaa yläreunaan `Your branch is behind 'origin/master'`. GitHub etärepositoriossa on edellä luotu uusi commit jota ei vielä paikallisesta Git projektikansiosta löydy.
 
-Nyt voidaan hakea muutokset paikalliseen versioon komennolla `git pull`. Jos aikaisemmin oltiin ajettu `push` vivulla `-u`, ei etärepositoriota tai haaran nimeä tarvitse kirjoittaa. Ajetaan `git pull`, jolloin tulostuu jotain seuraavankaltaista:
+Synkronoidaan paikallinen projektikansio GitHubissa olevan etärepositorin kanssa hakemalla muutos paikalliseen kansioon komennolla `git pull`. Jos aikaisemmin oltiin suoritettu komento `push` valitsimella `-u`, ei etärepositoriota tai haaran nimeä tarvitse kirjoittaa. Suoritetaan komento `git pull`, jolloin tulostuu jotain seuraavankaltaista:
 
 ```bash
 remote: Counting objects: 3, done.
