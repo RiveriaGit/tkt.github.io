@@ -360,7 +360,7 @@ Aloitetaan tekemällä muutoksia projektiin GitHubin kautta. GitHubin etäreposi
 
 ![Kynä-ikoni Githubissa](/assets/edit.png)
 
-Lisätään tiedostoon `tietokoneen_nimi.txt` uusi rivi tekstiä, ja luodaan uusi commit sivun alalaidasta vihreästä napista. Muutokset eivät kuitenkaan näy omalla koneella heti. Etärepositoriossa tehdyt muutokset eivät siis siirry automaattisesti paikalliseen projektikansioon.
+Lisätään tiedostoon `eka_tiedosto.txt` uusi rivi tekstiä, ja luodaan uusi commit sivun alalaidasta vihreästä napista. Muutokset eivät kuitenkaan näy omalla koneella heti. Etärepositoriossa tehdyt muutokset eivät siis siirry automaattisesti paikalliseen projektikansioon.
 
 Suoritetaan paikallisen tietokoneen Git Bash konsolissa seuraavat komennot:
 
@@ -373,30 +373,30 @@ git status
 
 Jos puskit committisi etärepositorioon vivun `-u` kanssa, Git osaa kertoa, että GitHubissa on muutoksia, joita paikallisessa versiossa ei ole: status-komento tulostaa yläreunaan `Your branch is behind 'origin/master'`. GitHub etärepositoriossa on edellä luotu uusi commit jota ei vielä paikallisesta Git projektikansiosta löydy.
 
-Synkronoidaan paikallinen projektikansio GitHubissa olevan etärepositorin kanssa hakemalla muutos paikalliseen kansioon komennolla `git pull`. Jos aikaisemmin oltiin suoritettu komento `push` valitsimella `-u`, ei etärepositoriota tai haaran nimeä tarvitse kirjoittaa. Suoritetaan komento `git pull`, jolloin tulostuu jotain seuraavankaltaista:
+Synkronoidaan siis paikallinen projektikansio GitHubissa olevan etärepositorin kanssa hakemalla muutos paikalliseen kansioon komennolla `git pull`. Jos aikaisemmin oltiin suoritettu komento `push` valitsimella `-u`, ei etärepositoriota tai haaran nimeä tarvitse kirjoittaa. Suoritetaan komento `git pull`, jolloin tulostuu jotain seuraavankaltaista:
 
 ```bash
-remote: Counting objects: 3, done.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
 remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From github.com
- * branch            master     -> FETCH_HEAD
-   8793615..c661629  master     -> origin/master
-Updating 8793615..c661629
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 692 bytes | 36.00 KiB/s, done.
+From github.com:
+   18a124d..7017a8c  master     -> origin/master
+Updating 18a124d..7017a8c
 Fast-forward
- lapio_vko2.txt | 1 +
+ eka_tiedosto.txt | 1 +
  1 file changed, 1 insertion(+)
 ```
 
 Nyt muutokset näkyvät myös paikallisesti.
 
 <div class="exercise">
-<h3>Tehtävä 8: Koodin hakeminen etärepositoriosta {% include points.html text="5%" %}</h3>
-Luo GitHubissa kouluprojektit-alikansioon uusi tiedosto, ja hae se sitten omaan projektiisi.
+<h3>Tehtävä 8: Paikallisen projektikansion ja Git etärepositorin synkroinoiminen {% include points.html text="5%" %}</h3>
+Luo GitHubissa softat-alikansioon uusi tiedosto <code>Pekan_ohjelmat.txt</code>, ja hae se sitten omaan paikalliseen projektikansioosi.
 </div>
 
-Käytännössä tämä tilanne vastaa sitä, että tehdään yhteisprojektia, ja joku muu on lisännyt projektiin koodia. Tällöin uuden ominaisuuden lisännyt julkaisee koodinsa puskemalla sen GitHubiin, jolloin muut projektin tekijät voivat hakea ne komennolla `git pull`.
+Käytännössä tämä tilanne vastaa sitä, että tehdään yhteisprojektia, jossa joku muu projektin jäsenistä on lisännyt projektiin uutta  tietoa. Tällöin uuden ominaisuuden lisännyt henkilö julkaisee paikalliseen projektikansioonsa tallentamansa tiedot GitHubiin, puskemalla ne GitHub etärepositorioon, jolloin muut projektin tekijät voivat hakea ne omiin paikallisiin projektikansioihinsa komennolla `git pull`.
 
 ## Stash
 
