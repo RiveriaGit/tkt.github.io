@@ -627,11 +627,11 @@ Jos tietää ongelman ratkaisun, voi sitä ehdottaa projektin omistajalle koodin
 
 Kyseessä on siis sama osoite, joka annettiin aikaisemmin `git remote add`-komennolle argumentiksi. Projektin omistaja ei saa ilmoitusta siitä, että hänen projektinsa on kloonattu.
 
-Jatkossa, kun aloitat uuden Git-projektin, on olemassa kaksi vaihtoehtoa etärepostorion linkittämiseksi. Voit joko luoda projektin ensin komentoriviltä komennolla `git init` ja lisätä sen jälkeen projektille etärepositorion. Toinen vaihtoehto on ensin luoda GitHubissa repositorio, ja kloonata sitten tyhjä projekti koneelle. Projekti voidaan siis aloitaa joko tyhjän paikallisen, tai tyhjän etärepositorion kautta.
+Jatkossa, kun aloitat uuden Git-projektin, on käytettävissä kaksi vaihtoehtoa etärepostorion linkittämiseksi. Voit joko luoda projektin ensin komentoriviltä komennolla `git init` ja lisätä sen jälkeen projektille etärepositorion. Toinen vaihtoehto on ensin luoda GitHubissa repositorio, ja kloonata sitten tyhjä projekti koneelle. Projekti voidaan siis aloitaa joko tyhjän paikallisen, tai tyhjän etärepositorion kautta.
 
 Jotta kloonattuun repositorioon tehdyt muutokset voidaan puskea takaisin alkuperäiseen etärepositorioon, projektin omistajan tulee [lisätä kloonaaja projektin kehittäjäksi](https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/). Muussa tapauksessa komento `git push` ei onnistu. Yhteisissä projekteissa voidaan siis luoda Git-projekti, jonka etärepositoriossa kaikki osallistujat ovat kehittäjinä, jolloin kaikki voivat vapaasti lisätä projektiin koodia.
 
-On kuitenkin myös toinen tapa ehdottaa muutoksia olemassaolevaan projektiin: _fork_. Kun projekti ns. forkataan, kopio siitä lisätään käyttäjän omaksi etärepositorioksi hänen omaan GitHub profiiliiinsa. Tästä tulee ilmoitus GitHubin "feediin", ja projektin omistaja voi nähdä, kuka on forkannut projektin. Kun olet forkannut projektin, voit kloonata oman kopiosi koneellesi tavalliseen tapaan _omasta profiilistasi_, ja puskea muuutoksia  _forkattuun etärepositorioosi_.
+On kuitenkin myös toinen tapa ehdottaa muutoksia olemassaolevaan projektiin: _fork_. Kun projekti ns. forkataan, kopio siitä lisätään käyttäjän omaksi etärepositorioksi hänen omaan GitHub profiiliiinsa. Forkkaamisesta tulee ilmoitus GitHubin "feediin", ja projektin omistaja voi nähdä, kuka on forkannut projektin. Kun olet forkannut projektin, voit kloonata oman kopiosi tietokoneellesi tavalliseen tapaan _omasta profiilistasi_, ja puskea muuutoksia  _forkattuun etärepositorioosi_.
 
 Jos omaan forkattuun kopioosi tekemäsi muutokset ovat mielestäsi niin hyviä, että haluat ehdottaa niitä myös alkuperäiseen projektiin, sen voi tehdä [pull requestin](https://help.github.com/articles/about-pull-requests/) avulla. Tällöin alkuperäisen projektin omistaja voi niin halutessaan liittää ehdottamasi muutokset mergen avulla alkuperäiseen projektiinsa.
 
@@ -639,34 +639,32 @@ Jos omaan forkattuun kopioosi tekemäsi muutokset ovat mielestäsi niin hyviä, 
 <h3>Tehtävä 13: Forkkaaminen ja kloonaaminen {% include points.html text="10%" %}</h3>
 <ol>
 <li>Selvitä ensin Googlen avulla, miten saat selville komentoriviltä Git-projektin etärepositorioiden nimet ja osoitteet. Kyseessä on siis komento, joka ajetaan Git-projektin sisällä, kun sille on asetettu etärepositorio.</li>
-<li>Forkkaa omaan GitHub profiiliisi harjoitusta varten tehty repositorio osoitteesta  <a href="https://github.com/RiveriaGit/DemoRepo">https://github.com/RiveriaGit/DemoRepo</a>. Kloonaa forkattu etärepositorio koneellesi. Selvitä sitten, minkä nimiseksi etärepositorio asetetaan automaattisesti kloonatessa. Voit tehdä tämän ajamalla edellisessä kohdassa selvittämäsi komennon kloonatun projektin sisällä.</li>
-<li>Lisää nimesi ja päivämäärä annettujen ohjeiden mukaan paikallisesta projektikansiosta käsin ja työnnä muutokset omaan GitHub profiilissa olevaan kopioosi.</li>
+<li>Forkkaa omaan GitHub profiiliisi harjoitusta varten tehty repositorio osoitteesta  <a href="https://github.com/RiveriaGit/DemoRepo">https://github.com/RiveriaGit/DemoRepo</a>. Kloonaa forkattu etärepositorio sitten tietokoneellesi. Selvitä tämän jälkeen, minkä nimiseksi etärepositorio asetetaan automaattisesti kloonatessa. Voit tehdä tämän ajamalla edellisessä kohdassa selvittämäsi komennon kloonatun projektin sisällä.</li>
+<li>Lisää nimesi ja päivämäärä annettujen ohjeiden mukaan tiedostoon <code>forkkaajat.md</code> paikallisesta projektikansiosta käsin ja työnnä muutokset omaan GitHub profiilissa olevaan kopioosi.</li>
 <li>Tee muutoksestasi <i>Pull Request</i> alkuperäiseen repositorioon</li>
 </ol>
 </div>
-
 <div class="exercise">
 <h3>Tehtävä 14: Toisen projektin tutkiminen {% include points.html text="5%" %}</h3>
-Tutki sen jälkeen jonkin vapaan lähdekoodin projektin repoa GitHubissa. Etsi, mistä löydät projektin issuet ja pull requestit. Etsi myös projektiin osallistuneet (<i>contributors</i>) ja heihin liittyvä statistiikka.
+Tutki sen jälkeen jonkin vapaan lähdekoodin projektin repositoriota GitHubissa. Etsi, mistä löydät projektin issuet ja pull requestit. Etsi myös projektiin osallistuneet (<i>contributors</i>) ja heihin liittyvä statistiikka.
 </div>
+
 
 ## Loppusanat
 
-Vasta-alkajana yhteistyöprojekteissa versionhallinnan avulla hukkaa ja rikkoo helposti koodia. Versionhallinnan käyttäminen koodaamisessa on kuitenkin eräs tärkeimmistä koodarin taidoista. Vaikka työpaikalla ei käytettäisi Gittiä, pätevät versionhallintaohjelmiin usein samat periaatteet.
+Vasta-alkajana yhteistyöprojekteissa versionhallinnan avulla hukkaa ja rikkoo helposti tietoa/koodia. Versionhallinnan käyttäminen on kuitenkin eräs tärkeimmistä tiedonkäsittelyn taidoista. Vaikka työpaikalla ei käytettäisi Gittiä, pätevät versionhallintaohjelmiin usein samat periaatteet.
 
-Jos törmäät outoon virheeseen, kysy rohkeasti apua, äläkä ajele sokkona komentoja. Pitkälle pääsee pitämällä silmällä `git status`-komennon tulosteita, puskemalla varmuuskopioita ajoittain, ja kommunikoimalla muiden projektilaisten kanssa muuallakin kuin commit-viesteissä. Gittiä oppii parhaiten käyttämällä sitä, älä siis lannistu ja poista projektia heti epäonnistuessasi. Pahimmassa tapausessa voi aina kloonata projektin uudestaan, kunhan on muistanut siirtää työnsä GitHubiin.
+Jos törmäät virheeseen, kysy rohkeasti apua, äläkä suorita komentoja sokkona. Pitkälle pääsee pelkästään pitämällä silmällä `git status`-komennon tulosteita, puskemalla varmuuskopioita ajoittain GitHubiin, ja kommunikoimalla muiden projektilaisten kanssa muuallakin kuin pelkästään commit-viesteissä. Gittiä oppii parhaiten sitä käyttämällä, älä siis lannistu ja poista projektia heti ensimmäisen virheen jälkeen. Pahimmassa tapausessa voi aina kloonata projektin itsellesi uudestaan, kunhan olet vain muistanut siirtää työsi GitHubiin.
 
 On jälleen aika hengähtää ja pitää tauko. Anna mielesi levätä, ennen kuin palaat materiaaliin ja sen oppimistavoitteisiin.
 
-Lisää Gitistä voi lukea esimerkiksi seuraavista lähteistä:
+Niin halutessasi Gitistä voi lukea lisää esimerkiksi seuraavista lähteistä:
 
 - <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>
-  - Pro Git Book on kohtuullisen raskas, mutta erittäin kattava dokumentaatio Gitistä. Kannattaa käyttää yksittäisen asian opiskelemiseen, kokonaan läpi rämpiminen voi olla turhan pitkäveteinen operaatio.
+  - Pro Git Book on erittäin kattava dokumentaatio Gitistä. Sitä kannattaa käyttää yksittäisen asian opiskelemiseen, kokonaan läpi rämpiminen voi olla turhan pitkällinen operaatio.
 - <a href="http://ohshitgit.com/">http://ohshitgit.com/</a>
-  - Apuja yleisiin ongelmatilanteisiin hauskasti puettuna.
-  - Komennot sisältävät jonkin verran Gitin historian ylikirjoittamista, mitä emme tässä osassa käsitelleet, ja saattaa siten joskus viedä ojasta aallikkoon. Voi kuitenkin olla nopea apu epätoivon hetkinä, ja erityisesti ensimmäinen komento, `git reflog`, pelastaa tilanteissa, joissa on onnistunut sekoittamaan koko pakan.
+  - Apuja yleisiin ongelmatilanteisiin hauskasti esitettynä.
+  - Komennot sisältävät jonkin verran Gitin historian ylikirjoittamista, mitä emme tässä osassa käsitelleet. Historian ylikirjoittaminen saattaa joskus viedä ojasta allikkoon, varsinkin jos projekti on puskettu GitHubiin. Voi kuitenkin olla nopea apu epätoivon hetkinä, ja erityisesti ensimmäinen komento, `git reflog`, pelastaa tilanteissa, joissa on onnistunut sekoittamaan koko pakan.
 - <a href="https://try.github.io/">https://try.github.io/</a>
-  - GitHubin tutoriaali, joka alkaa ihan perusasioista. Käsittelee joitain asioita, joita ei käyty läpi tässä osassa, kuten `git diff` ja komentoriviltä haarojen yhdistäminen.
+  - GitHubin tutoriaali, joka alkaa ihan perusasioista. Käsittelee joitain asioita, joita ei käyty läpi tässä materiaalissa, kuten `git diff` ja komentoriviltä haarojen yhdistäminen.
 - Mikäli olet jo tutustunut Gittiin jonkin verran, saatat olla kiinnostunut oppimaan lisää Gitin historiasta. Historian säilyttäminen, jota demonstroitiin esimerkiksi salaisuus-tehtävässä, mahdollistaa myös sen muokkaamisen jälkikäteen. Vanhaa sanontaa mukaillen, _Voittajat kirjoittavat historian, ja mokailijat ylikirjoittavat Gitin historian_. Historian muokkaaminen on kuitenkin varsin vaarallista erityisesti yhteistyöprojekteissa, sillä sen avulla voi pilata muiden ihmisten koneilla olevia versioita. Jos olet kuitenkin edelleen kiinnostunut, Atlassanilla on erikseen tutoriaali [historian ylikirjoittamisesta](https://www.atlassian.com/git/tutorials/rewriting-history), sekä muita [edistyneempiä tutoriaaleja](https://www.atlassian.com/git/tutorials/advanced-overview).
-
-P.S Mikäli olet läsnäoleva opiskelija yliopistossa, kannattaa käydä tarkistasssa GitHub student packin [tarjoukset](https://education.github.com/pack/offers), tarjolla on krediittejä esimerkiksi DigitalOcean ja AWS -palveluihin, sekä etuja myös itse Githubiin.
