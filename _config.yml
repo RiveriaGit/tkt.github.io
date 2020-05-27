@@ -17,7 +17,7 @@ title: Tietokone työvälineenä - Lapio
 email: jouni.jokelainen@riveria.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: '' # the subpath of your site, e.g. /blog
-url: https://riveriagit.github.io/tkt.github.io/
+url: https://riveriagit.github.io/
 github_username: RiveriaGit
 favicon: /favicon.ico
 webmaster_verifications:
