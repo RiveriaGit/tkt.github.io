@@ -14,11 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Tietokone työvälineenä - Lapio
-email: janne.lofhjelm@helsinki.fi
+email: jouni.jokelainen@riveria.fi
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: '' # the subpath of your site, e.g. /blog
 url: https://tkt.github.io/
-github_username: tkt-lapio
+github_username: RiveriaGit
 favicon: /favicon.ico
 webmaster_verifications:
   google: O16GEzCu8_885HGbQ4oY7pnXFYoMzNAFR1zheUKqCE8
